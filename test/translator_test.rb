@@ -48,5 +48,6 @@ class TranslatorTest < Minitest::Test
 
     result = t.morse_to_english("......-...-..--- .-----.-..-..-..")
 
+    assert_equal "hello world", result
   end
 end
