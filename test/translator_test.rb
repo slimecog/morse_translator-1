@@ -46,8 +46,8 @@ class TranslatorTest < Minitest::Test
   def test_it_can_translate_morse_to_english
     t = Translator.new
 
-    result = t.morse_to_english("......-...-..--- .-----.-..-..-..")
+    result = t.morse_to_english("..  .- --  .. -.  .-  ..-. .. .-.. .")
 
-    assert_equal "hello world", result
+    assert_equal "I am in a file", result
   end
 end

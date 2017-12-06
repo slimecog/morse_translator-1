@@ -43,7 +43,7 @@ class Translator
     }
     @morse_dictionary = {
       '.-' => 'a',
-      '-..' => 'b',
+      '-...' => 'b',
       '-.-.' => 'c',
       '-..' => 'd',
       '.' => 'e',
@@ -98,8 +98,9 @@ class Translator
   end
 
   def morse_to_english(input)
-    input.chars.each.map do |letter|
-      letter = @morse_dictionary[letter]
-    end.join
+    input = input.split(/(  )/).each.map { |x| x.split(' ') }
+    input.each.map do |array|
+      array.each.map { |letter| letter = @morse_dictionary[letter] }
+    end.join(" ")
   end
 end
