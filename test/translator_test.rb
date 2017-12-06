@@ -26,4 +26,27 @@ class TranslatorTest < Minitest::Test
 
     assert_equal "......-...-..--- .-----.-..-..-..", result
   end
+
+  def test_it_works_with_numbers
+    t = Translator.new
+
+    result = t.english_to_morse("There are 3 ships")
+
+    assert_equal "-......-.. .-.-.. ...-- ..........--....", result
+  end
+
+  def test_it_can_translate_from_a_file
+    t = Translator.new
+
+    result = t.from_file("input.txt")
+
+    assert_equal ".. .--- ..-. .- ..-....-...", result
+  end
+
+  def test_it_can_translate_morse_to_english
+    t = Translator.new
+
+    result = t.morse_to_english("......-...-..--- .-----.-..-..-..")
+
+  end
 end

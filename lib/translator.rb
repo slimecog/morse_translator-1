@@ -50,4 +50,12 @@ class Translator
     trans.join
   end
 
+  def from_file(input)
+    input = "./data/" + input
+    File.open(input, "r") do |f|
+      f.each_line.map do |line|
+        english_to_morse(line.to_s)
+      end.join
+    end
+  end
 end
